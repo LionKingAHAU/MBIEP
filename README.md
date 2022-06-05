@@ -11,9 +11,15 @@ MBIEP is a deep learning framework for identifying essential proteins by integra
 -   scikit-learn-0.23.1
 
 # Usage
+## Source and preprocessing
+1.  `PPI network` is downloaded from BioGRID (https://thebiogrid.org/), we use the physical interactions only, remove the self-loops,  and duplicate edges.
+2. `Subcellular localization` is downloaded from the integrated channel of COMPARTMENTS (https://compartments.jensenlab.org/Search), then the data is normalized.
+3. `Gene expression` is downloaded from the GEO database (Accession number: GSE7645), then the data is normalized.
+4. `Essential proteins`  are downloaded from the OGEE database (https://v3.ogee.info) and DEG database (http://origin.tubic.org/deg/public/index.php), we removed duplicate records from two datasets to obtain the union set.
+
 ## Dataset
-We provide a zip file of the dataset, which includes the training set, validation set and test set, divided in the ratio of 6:2:2, respectively. Among them：
-1. `_emb.npy` file represents the features extracted from the PPI network, we use the node2vec ([https://github.com/aditya-grover/node2vec](https://github.com/aditya-grover/node2vec)) techinique to obtain feature representations from the PPI network. Parameters are set as follows:
+We provide a zip file of the dataset, which includes the training set, validation set, and test set, divided in the ratio of 6:2:2, respectively. Among them：
+1. `_emb.npy` file represents the features extracted from the PPI network, we use the node2vec ([https://github.com/aditya-grover/node2vec](https://github.com/aditya-grover/node2vec)) technique to obtain feature representations from the PPI network. Parameters are set as follows:
 
 ```python
 python main.py --input Gnodes.txt --output _emb.txt --dimensions 64 --walk-length 20 --num-walks 10 --window-size 10

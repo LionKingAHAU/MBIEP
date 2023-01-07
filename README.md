@@ -1,7 +1,7 @@
 # MBIEP
 
 MBIEP is a deep learning framework for identifying essential proteins by integrating Multiple Biological Information, namely subcellular localization, gene expression, and PPI network.This framework is published in BMC Bioinformatics.
-##CITE US:
+## CITE US:
 Yi Yue,Chen Ye,Pei‑Yun Peng,Hui‑Xin Zhai,Iftikhar Ahmad,Chuan Xia,Yun‑Zhi Wu and You‑Hua Zhang.A deep learning framework for identifying essential proteins based on multiple biological information.BMC Bioinformatics (2022) 23:318.https://doi.org/10.1186/s12859-022-04868-8
 
 # Requirement
